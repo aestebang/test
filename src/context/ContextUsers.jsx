@@ -1,13 +1,15 @@
-import React, { createContext, use, useEffect, useState } from "react";
+import React, { createContext, use, useEffect, useMemo, useState } from "react";
 import useDeleteUser from "../hooks/useDeleteUser";
 
 export const ContextUsers = createContext();
 
 const ContextUsersProvider = ({ children }) => {
   const [userData, setUser] = useState([]);
+  console.log("desde context", userData);
+
 
   const getUsers = () => {
-    fetch("https://jsonplaceholder.typicode.com/todos/1")
+    fetch("https://jsonplaceholder.typicode.com/todos/")
       .then((res) => res.json())
       .then((data) => setUser(data))
       .catch((error) => console.log(error));
@@ -17,7 +19,7 @@ const ContextUsersProvider = ({ children }) => {
     getUsers();
   }, []);
 
-  const values = { userData,getUsers };
+  const values = { userData, getUsers };
   return (
     <ContextUsers.Provider value={values}>{children}</ContextUsers.Provider>
   );
