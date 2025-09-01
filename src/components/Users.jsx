@@ -11,7 +11,7 @@ const Users = () => {
   });
   const [userNew, setUserNew] = useState(null);
 
-  console.log("desdeuserform", userForm);
+  // console.log("desdeuserform", userForm);
   // console.log('desdeuser',userData);
 
   //cambios de estado del formulario
@@ -25,7 +25,7 @@ const Users = () => {
   //envio de formulario
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("enviando formulario", userForm);
+    // console.log("enviando formulario", userForm);
     setUserNew(userForm);
     setUserForm({
       name: "",

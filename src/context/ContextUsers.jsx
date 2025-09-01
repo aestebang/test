@@ -5,7 +5,7 @@ export const ContextUsers = createContext();
 
 const ContextUsersProvider = ({ children }) => {
   const [userData, setUser] = useState([]);
-  console.log("desde context", userData);
+  // console.log("desde context", userData);
 
 
   const getUsers = () => {
