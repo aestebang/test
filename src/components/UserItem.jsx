@@ -4,9 +4,11 @@ import { useContextUser } from "../context/hooks/useContextUser";
 import filterUser from "../utils/filterUser";
 import Count from "./Count";
 import UserList from "./UserList";
+import { useStoreUser } from "../context/store/useStoreUser";
 
 const UserItem = () => {
-  const { userData, getUsers } = useContextUser();
+  const { userData } = useStoreUser();
+  // const { userData, getUsers } = useContextUser();
   const { deleteUser, userDelete } = useDeleteUser(userData);
 
   const [datosFiltrados, setDatosFiltrados] = useState([]);
@@ -15,9 +17,9 @@ const UserItem = () => {
   const filterUserMemo = useMemo(() => filterUser(userData), [userData]);
   // console.log("desdeitemfilter", filterUserMemo);
 
-const renderCount = () => {
+  const renderCount = () => {
     console.log("render count button");
-  }
+  };
 
   const increment = useCallback(() => {
     // console.log("increment");

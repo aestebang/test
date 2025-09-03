@@ -1,12 +1,10 @@
-import React, { createContext, use, useEffect, useMemo, useState } from "react";
-import useDeleteUser from "../hooks/useDeleteUser";
+import React, { createContext, useEffect, useState } from "react";
 
 export const ContextUsers = createContext();
 
 const ContextUsersProvider = ({ children }) => {
   const [userData, setUser] = useState([]);
   // console.log("desde context", userData);
-
 
   const getUsers = () => {
     fetch("https://jsonplaceholder.typicode.com/todos/")

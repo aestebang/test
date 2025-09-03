@@ -1,9 +1,8 @@
 import { useContext, useState } from "react";
 import UserItem from "./UserItem";
-import { ContextUsers } from "../context/ContextUsers";
 
 const Users = () => {
-  const { userData } = useContext(ContextUsers);
+  // const { userData } = useContext(ContextUsers);
   const [userForm, setUserForm] = useState({
     name: "",
     email: "",

@@ -6,8 +6,8 @@ import ContextUsersProvider from './context/ContextUsers'
 
 createRoot(document.getElementById('root')!).render(
   // <StrictMode>
-    <ContextUsersProvider>
+    // <ContextUsersProvider>
       <App />
-    </ContextUsersProvider>
+    // </ContextUsersProvider>
   // </StrictMode>,
 )
